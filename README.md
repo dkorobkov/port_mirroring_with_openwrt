@@ -19,6 +19,9 @@ Using a simple unmanaged switch won't work because packets from sensor to server
 
 Luckily, I had an old $15 TP-Link TL-WR740N that can run OpenWRT and is based on Atheros AR9331 that has a built-in switch with port mirroring. Main problem was to set it up so it does not interfere communications.
 
+If OpenWRT does not fit into router memory it is possible to remove LuCI and use serial or SSH console. I am using 
+serial console (3.3V 115200). 
+
 eth1 is WAN (blue) port, eth0 is 5-port switch with 4 external (yellow) ports and one port connected to CPU internally.
 
 ## Steps:
@@ -26,6 +29,8 @@ eth1 is WAN (blue) port, eth0 is 5-port switch with 4 external (yellow) ports an
 1. Install OpenWRT 18.06.7 (others will work, too)
 
 2. Disable firewall (easier) or set it up to have access to LuCI and console from WAN (eth1) port. Connect a laptop that will be used as OpenWRT console to router WAN (blue) port and ensure that console is available over SSH. It will also be better to disable IPv6 (prevents ICMP noise from router)
+
+>root@OpenWrt:/# /etc/init.d/firewall stop
 
 3. In LuCI, set LAN interface to "Unmanaged". This will prevent assigning IP addresses or any visibility problems:
 <img src="https://github.com/dkorobkov/port_mirroring_with_openwrt/blob/master/3.png">
@@ -52,3 +57,6 @@ Connect a laptop with Wireshark to this port.
 7. Connect your device to port 4 and server to any free LAN port. Run  swconfig dev eth0 show and reinitialize any values set above if needed (sometimes the switch will feel link up/down and probably reconfigure itself. I did not waste time on making these settings permanent).
 
 8. Enjoy.
+
+More on networking CLI can be found in https://openwrt.org/docs/guide-user/base-system/basic-networking
+
