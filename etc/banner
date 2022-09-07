@@ -1,0 +1,15 @@
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt 18.06.8, r7989-82fbd85747
+ -----------------------------------------------------
+
+Transparent Ethernet sniffer.
+=============================
+Connect Device Under Testing to port 4
+Connect laptop with Wireshark to port 2
+Connect server for DUT to port 3
+AFTER ALL, run /root/sniffer.sh
