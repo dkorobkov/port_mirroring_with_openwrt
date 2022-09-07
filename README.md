@@ -49,9 +49,9 @@ Connect a laptop with Wireshark to this port.
 
 6. Choose the port to mirror (we will connect DUT, Device Under Testing to this port). I chose port 4:
 
->root@OpenWrt:/# swconfig dev eth0 set port 4 enable_mirror_rx 1
+>root@OpenWrt:/# swconfig dev eth0 port 4 set enable_mirror_rx 1
 >
->root@OpenWrt:/# swconfig dev eth0 set port 4 enable_mirror_tx 1
+>root@OpenWrt:/# swconfig dev eth0 port 4 set enable_mirror_tx 1
 
 <img src="https://github.com/dkorobkov/port_mirroring_with_openwrt/blob/master/5.png">
 
