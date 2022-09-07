@@ -46,6 +46,7 @@ Port 0 is CPU and is not available from outside.
 >root@OpenWrt:/# swconfig dev eth0 set mirror_monitor_port 2
 
 Connect a laptop with Wireshark to this port.
+
 6. Choose the port to mirror (we will connect DUT, Device Under Testing to this port). I chose port 4:
 
 >root@OpenWrt:/# swconfig dev eth0 set port 4 enable_mirror_rx 1
